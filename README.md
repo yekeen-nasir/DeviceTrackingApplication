@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Tracker — Python CLI device tracker
 
 **Tracker** is a Python-first, command-line device tracking system that helps people manage and monitor their own enrolled devices (laptops/desktops, advanced Termux Android). It is *consent-first* — devices must be enrolled by their owners. Tracker provides an admin CLI, a small device agent, and an optional self-hosted server.
@@ -65,3 +66,5 @@ MIT License — see `LICENSE`.
 
 ## Important disclaimer
 This tool is intended only for *tracking devices you own or have explicit permission to track*. Do not use for surveillance, stalking, or any unauthorized monitoring. See `TERMS.md` and `PRIVACY.md` for more.
+=======
+>>>>>>> Stashed changes
