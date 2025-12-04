@@ -1,0 +1,77 @@
+[project]
+name = "device-tracker"
+version = "0.1.0"
+description = "Cross-platform device tracking system with server, agent, and CLI."
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+    { name = "Captain K", email = "example@example.com" }
+]
+
+dependencies = [
+    # --- Server core ---
+    "fastapi==0.123.0",
+    "uvicorn[standard]==0.38.0",
+    "pydantic==2.12.5",
+    "pydantic-settings==2.6.0",
+    "python-dotenv",
+    "requests==2.32.5",
+    "httpx==0.28.1",
+    "rich==14.2.0",
+
+    # --- Database ---
+    "sqlalchemy==2.0.44",
+    "alembic",
+    "psycopg2-binary==2.9.10",
+
+    # --- Redis / Caching / Queues ---
+    "redis",
+
+    # --- Security & Crypto ---
+    "cryptography==46.0.3",
+    "passlib[bcrypt]==1.7.4",
+    "python-jose[cryptography]==3.3.0",
+        
+    # --- Utilities ---
+    "typing-extensions",
+    "python-multipart",
+    "aiofiles",
+    "toml==0.10.2",
+    "typer==0.20.0",
+
+    # ADD THIS ↓↓↓
+    "email-validator",
+
+    # --- Agent specific ---
+    "psutil",
+    "platformdirs",
+
+    # --- CLI ---
+    "click",
+
+    # --- Optional but recommended ---
+    "ipaddress",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.1",
+    "pytest-asyncio",
+    "pytest-cov",
+    "black",
+    "isort",
+    "mypy"
+]
+
+[project.scripts]
+trackerctl = "apps.trackerctl.__main__:main"
+tracker-agent = "apps.tracker_agent.__main__:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests", "docs"]

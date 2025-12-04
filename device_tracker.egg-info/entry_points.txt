@@ -1,0 +1,3 @@
+[console_scripts]
+tracker-agent = apps.tracker_agent.__main__:main
+trackerctl = apps.trackerctl.__main__:main
